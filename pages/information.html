@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="turkish">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>INTEGRA IHA Projesi</title>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div>
+			<h3>Made by INTEGRA</h3>
+			<h2>IHA Yardım Websitesi</h2><br>
+		</div>
+		<div>
+			<h3>INTEGRA IHA yardım websitesine hoş geldiniz.</h3>
+			<button class="SelectButton" onclick="SoruButtonPressed()">Soru sor</button>
+			<button class="SelectButton" onclick="CevapButtonPressed()">Cevap al</button>
+		</div>
+		<div id="SoruDiv">
+			<h1>Size nasıl yardımcı olabiliriz?</h1>
+			<label>Soru:</label>
+			<input type="text" id="SoruInput"><br>
+			<button onclick="SendQuestion()">Soruyu gönder</button><br>
+			<div>
+				<h2 id="QuestionId"></h2>
+				<h3 id="QuestionHelp"></h3>
+			</div>
+		</div>
+		<div id="CevapDiv">
+			<h1>Sorununuzun çözümüne ulaşın.</h1>
+			<label>Kod:</label>
+			<input type="text" id="CevapInput"><br>
+			<button onclick="GetInformation()">Kontrol et</button>
+			<h3 id="CevapSoru"></h3>
+			<h2 id="CevapOutput"></h2>
+		</div>
+		<script src="./information.js"></script>
+		<script type="module" src="database.js"></script>
+	</body>
+</html>
