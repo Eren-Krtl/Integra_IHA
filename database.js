@@ -1,5 +1,5 @@
 import { collection, addDoc, doc, getDoc } from "firebase/firestore"
-import { database } from "../firestore.js"
+import { database } from "./firestore.js"
 
 // -- Database adding --
 async function saveInformation(info){
