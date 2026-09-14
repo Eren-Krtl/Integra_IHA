@@ -1,43 +1,176 @@
 <!DOCTYPE html>
 <html lang="turkish">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>INTEGRA IHA Projesi</title>
-		<link href="style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div>
-			<h3>Made by INTEGRA</h3>
-			<h2>IHA Yardım Websitesi</h2><br>
-		</div>
-		<div>
-			<h3 style="display: inline-block;">INTEGRA IHA yardım websitesine hoş geldiniz.</h3><a id="GoogleDoc" href="https://www.googleapps.com/forms/about//">Google Linki</a>
-			<h2>Amacimiz</h2>
-			<p>Amacimiz kitimiz ile birlikte ogrencilere ulasip onlara yardimci olmak</p>
-			<h2>Yardım alin</h2>
-			<button class="SelectButton" onclick="SoruButtonPressed()">Soru sor</button>
-			<button class="SelectButton" onclick="CevapButtonPressed()">Cevap al</button>
-		</div>
-		<div id="SoruDiv">
-			<h1>Size nasıl yardımcı olabiliriz?</h1>
-			<label>Soru:</label>
-			<input type="text" id="SoruInput"><br>
-			<button onclick="SendQuestion()">Soruyu gönder</button><br>
-			<div>
-				<h2 id="QuestionId"></h2>
-				<h3 id="QuestionHelp"></h3>
-			</div>
-		</div>
-		<div id="CevapDiv">
-			<h1>Sorununuzun çözümüne ulaşın.</h1>
-			<label>Kod:</label>
-			<input type="text" id="CevapInput"><br>
-			<button onclick="GetInformation()">Kontrol et</button>
-			<h3 id="CevapSoru"></h3>
-			<h2 id="CevapOutput"></h2>
-		</div>
-		<script src="/main_logic.js"></script>
-		<script type="module" src="database.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>INTEGRA IHA Projesi</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="integra-container">
+
+            <!-- ÜST BAŞLIK BÖLÜMÜ -->
+            <div class="site-header">
+                <h3>Made by INTEGRA</h3>
+                <h2>IHA Yardım Websitesi</h2><br>
+				<a id="GoogleDoc" href="https://www.googleapps.com/forms/about//" target="_blank">Google Linki</a>
+            </div>
+
+            <!-- EN ÜST YENİ AMACIMIZ DİVİ -->
+            <div class="section purpose-section">
+                <h2 class="section-title">AMACIMIZ</h2>
+                <div class="text-card">
+                    <p class="description">
+                        INTEGRA IHA projesi olarak temel amacımız, hazırladığımız özel eğitim ve donanım kitleri vasıtasıyla Türkiye'nin dört bir yanındaki gençlere doğrudan ulaşmaktır. İnsansız Hava Araçları (İHA) teknolojileri, havacılık ve otonom sistemler alanında öğrencilere kılavuzluk ederek onların teknik bilgi ve becerilerini geliştirmeyi hedefliyoruz.
+                    </p>
+                    <p class="description">
+                        Geliştirdiğimiz bu interaktif yardım portalı sayesinde, kitlerimizi kullanan öğrencilerin karşılaştığı teknik sorunlara anında çözümler sunuyor, merak ettikleri soruları yanıtlıyor ve bilimsel merakı pratik başarıya dönüştürmelerine destek oluyoruz.
+                    </p>
+                </div>
+            </div>
+
+            <!-- HAKKIMIZDA BAŞLIK BÖLÜMÜ -->
+            <div class="section hero-section">
+                <h1 class="main-title">INTEGRA 3646 HAKKINDA</h1>
+                <p class="hero-subtitle">2011'den Beri Türkiye'de STEM+A Eğitimi ve FIRST Öncüsü</p>
+            </div>
+
+            <!-- YOLCULUĞUMUZ BÖLÜMÜ -->
+            <div class="section journey-section">
+                <h2 class="section-title">YOLCULUĞUMUZ</h2>
+                <div class="text-card">
+                    <p class="description">
+                        2011 yılında İstanbul Bahçeşehir Fen ve Teknoloji Lisesi'nde kurulan Takım 3646 Bahçeşehir INTEGRA, 5 kişilik küçük bir öğrenci grubundan 17'si kız öğrenci olmak üzere 48 üyeli geniş bir takıma dönüşmüştür. Yıllar içinde edindiğimiz tecrübe, disiplin ve mühendislik vizyonu sayesinde sadece robotik alanında değil, toplumsal fayda sağlayan birçok teknoloji projesinde de öncü roller üstlendik.
+                    </p>
+                    <p class="description">
+                        Türkiye'nin ilk FRC takımlarından biri olarak, Houston'daki Einstein Sahası'na ulaşan ilk Türk takımı olmanın gururunu yaşıyoruz. Bu yolculuk bugün şunları içermektedir:
+                    </p>
+                    <ul class="bullet-list">
+                        <li>Millî Eğitim Bakanlığı tarafından kabul edilen robotik ve teknoloji müfredatları hazırlandı.</li>
+                        <li>FIRST topluluğundaki öğrenciler için $289.110 tutarında burs olanağı sağlandı.</li>
+                        <li>Deprem sonrası 34 konteyner kentte 640 çocuğa ulaşarak 3 ay boyunca kesintisiz STEAM desteği sağlandı.</li>
+                        <li>96 FLL mentörü yetiştirilirken uluslararası düzeyde FIRST takımları kuruldu ve mentörlük yapıldı.</li>
+                        <li>Lise ve ortaokul seviyesindeki gençlere yönelik ücretsiz İHA ve robotik eğitim atölyeleri düzenlendi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MİSYONUMUZ BÖLÜMÜ -->
+            <div class="section mission-section">
+                <h2 class="section-title">MİSYONUMUZ</h2>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <span class="mission-number">01</span>
+                        <p>FIRST ve STEM+A eğitimini Türkiye genelinde yaygınlaştırmak ve fırsat eşitliği sağlamak</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="mission-number">02</span>
+                        <p>Yenilikçiliği, üretkenliği ve teorik bilginin pratik uygulamaya dönüşmesini teşvik etmek</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="mission-number">03</span>
+                        <p>Gençlerin özgün fikirlerini ve mühendislik projelerini hayata geçirmeleri için fırsatlar yaratmak</p>
+                    </div>
+                    <div class="mission-card">
+                        <span class="mission-number">04</span>
+                        <p>Bilim, teknoloji ve mühendisliği toplumda olumlu değişim yaratacak güçlü birer katalizör olarak öne çıkarmak</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROGRAM BÖLÜMÜ -->
+            <div class="section program-section">
+                <h2 class="section-title">PROGRAM</h2>
+                <div class="program-grid">
+                    <div class="program-card">
+                        <h3>FIRST NEDİR?</h3>
+                        <p>
+                            FIRST (For Inspiration and Recognition of Science and Technology), 1989 yılında Dean Kamen tarafından kurulmuş küresel bir kâr amacı gütmeyen kuruluştur. 4-18 yaş arası gençler için kapsayıcı, takım tabanlı ve yenilikçi robotik programları sunar.
+                        </p>
+                        <h4 class="sub-heading">TEMEL DEĞERLER</h4>
+                        <ul class="values-list">
+                            <li>Duyarlı Profesyonellik (Gracious Professionalism)</li>
+                            <li>Takım Çalışması, Dayanışma ve İş Birliği</li>
+                            <li>Yenilikçilik, Yaratıcılık ve Problem Çözme</li>
+                            <li>Fırsat Eşitliği, Çeşitlilik ve Kapsayıcılık</li>
+                        </ul>
+                    </div>
+
+                    <div class="program-card">
+                        <h3>FIRST ROBOTICS COMPETITION (FRC)</h3>
+                        <p>
+                            FRC, liseli öğrencilerin yıllık olarak yenilenen karmaşık görevler için endüstriyel boyutlarda ve standartlarda robotlar tasarladığı, inşa ettiği ve programladığı uluslararası bir mühendislik yarışmasıdır.
+                        </p>
+                        <h4 class="sub-heading">YARIŞMA YAPISI</h4>
+                        <ul class="values-list">
+                            <li>Küresel kick-off etkinliği ile her yıl yepyeni bir oyun temasının açıklanması</li>
+                            <li>Kısıtlı süre içeren 6 haftalık yoğun robot yapım ve yazılım sezonu</li>
+                            <li>Chairman's (Impact) Ödülü dahil çok sayıda prestijli küresel ödül kategorisi</li>
+                            <li>Hem teknik mühendislik hem de sosyal sorumluluk başarılarına odaklanma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BAŞARI TABLOSU BÖLÜMÜ -->
+            <div class="section achievement-section">
+                <h2 class="section-title">BAŞARI TABLOMUZ</h2>
+                <div class="achievement-grid">
+                    <div class="achievement-box">
+                        <span class="count">4</span>
+                        <span class="label">FIRST Impact Ödülü</span>
+                    </div>
+                    <div class="achievement-box">
+                        <span class="count">2</span>
+                        <span class="label">FIRST Impact Finalist Ödülü</span>
+                    </div>
+                    <div class="achievement-box">
+                        <span class="count">1</span>
+                        <span class="label">Woodie Flowers Finalist Ödülü</span>
+                    </div>
+                    <div class="achievement-box">
+                        <span class="count">10</span>
+                        <span class="label">Blue Banner</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İHA YARDIM PORTALI BÖLÜMÜ -->
+            <div class="section help-portal-section">
+                <div class="portal-body">
+                    <h2 class="section-title">Yardım alın</h2>
+                    <div class="button-group">
+                        <button class="SelectButton" onclick="SoruButtonPressed()">Soru sor</button>
+                        <button class="SelectButton" onclick="CevapButtonPressed()">Cevap al</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EN ALTTA YER ALAN SORU SORMA BÖLÜMÜ -->
+            <div id="SoruDiv">
+                <h1>Size nasıl yardımcı olabiliriz?</h1>
+                <label>Soru:</label>
+                <input type="text" id="SoruInput"><br>
+                <button onclick="SendQuestion()">Soruyu gönder</button><br>
+                <div>
+                    <h2 id="QuestionId"></h2>
+                    <h3 id="QuestionHelp"></h3>
+                </div>
+            </div>
+
+            <!-- EN ALTTA YER ALAN CEVAP KONTROL BÖLÜMÜ -->
+            <div id="CevapDiv">
+                <h1>Sorununuzun çözümüne ulaşın.</h1>
+                <label>Kod:</label>
+                <input type="text" id="CevapInput"><br>
+                <button onclick="GetInformation()">Kontrol et</button>
+                <h3 id="CevapSoru"></h3>
+                <h2 id="CevapOutput"></h2>
+            </div>
+
+        </div>
+
+        <script src="/main_logic.js"></script>
+        <script type="module" src="database.js"></script>
+    </body>
 </html>
